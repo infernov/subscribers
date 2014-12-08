@@ -6,6 +6,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
+use common\models\SubscribersSearch;
 
 /**
  * Site controller
@@ -53,9 +54,19 @@ class SiteController extends Controller
         ];
     }
 
+    /**
+     * Lists all Subscribers models.
+     * @return mixed
+     */
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new SubscribersSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionLogin()
