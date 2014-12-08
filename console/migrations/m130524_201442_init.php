@@ -26,6 +26,19 @@ class m130524_201442_init extends Migration
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
+
+        $this->insert('{{%user}}', [
+            'id' => 1,
+            'username' => 'admin',
+            'auth_key' => 'iHuMPkVJtRWUuI6D2WbBe2Ooqf4S3yYp',
+            'password_hash' => '$2y$13$IfBFIVlUiXjHaEb.BY8YIeEIHgd7fVE7py5LZVahjs3KdllksW9KW',
+            'password_reset_token' => NULL,
+            'email' => 'admin@test.com',
+            'role' => 10,
+            'status' => 10,
+            'created_at' => 1418073072,
+            'updated_at' => 1418073072
+        ]);
     }
 
     public function down()

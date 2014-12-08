@@ -1,3 +1,6 @@
+Backend Username: admin
+Backend Password: qwerty
+
 Yii 2 Advanced Application Template
 ===================================
 
